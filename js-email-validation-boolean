@@ -1,0 +1,35 @@
+	function validationFiles(){
+		$('.verify').removeClass('errorInput');
+		$('#erroBoxInfo').hide();
+		var error = '';
+		
+		if($('#nameMod').val()==''){
+			$('#nameMod.verify').addClass('errorInput');
+			error += 'nome';
+		};
+		if($('#priorityMod').val()==''){
+			$('#priorityMod.verify').addClass('errorInput');
+			error += 'prioridade';
+		};
+// 		if($('#descriptionMod').val()==''){
+// 			$('#descriptionMod.verify').addClass('errorInput');
+// 			error += 'descrição';
+// 		};
+		
+// 		if($('#modalPriceFixed').prop('checked') && $('#priceFixedModVal').val() == ''){
+// 			$('#priceFixedModVal.verify').addClass('errorInput');
+// 			error += 'preço';	
+// 		};
+		if(error.length>0){
+			$('#erroBoxInfo').show();
+			return false;
+		};
+		
+		return true;
+	}
+
+	function uploadExcel(){
+		if(!validationFiles()){
+			return false;
+		};
+	}	
